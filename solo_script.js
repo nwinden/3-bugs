@@ -21,7 +21,7 @@ position = document.getElementById('content');
 for(var i = 0; i < array.length; i++){
 
 
-  //created a new array to store the calculateSTI values into to fix the bug where array was looping and storing into itself
+  //created a new array to store the calculateSTI values into to fix the bug where array was looping and storing into itself and added what index calculateSTI should use
   arraySTI[i] = calculateSTI(array[i]);
  	newEl = document.createElement('li');
 	newText = document.createTextNode(arraySTI[i]);
@@ -45,6 +45,7 @@ function calculateSTI(array){
   }
 
   newArray[1] = bonus;
+  //rounded the floats
   newArray[2] = Math.round(baseSalary * (1.0 + bonus));
   newArray[3] = Math.round(baseSalary * bonus);
   console.log(newArray[0] + " " + newArray[1] + " " + newArray[2] + " " + newArray[3]);
